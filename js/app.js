@@ -1,5 +1,60 @@
 'use strict';
 
+
+var hourDay = ['6am','7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
+function CookiesSold(location, minCust, maxCust, avgCookies) {
+  this.location = location;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookies = avgCookies;
+  CookiesSold.locationTest.push(this.location);
+}
+CookiesSold.locationTest = [];
+CookiesSold.daySales = [];
+
+CookiesSold.prototype.randomCustPerHour = function() {
+  return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+};
+
+CookiesSold.prototype.simulateDay = function() {
+  for (var i = 0; i <= hourDay.length - 1; i++) {
+    CookiesSold.daySales.push(Math.floor(this.randomCustPerHour() * this.avgCookies));
+  }
+};
+
+var pike = new CookiesSold('1st and Pike', 23, 65, 6.3);
+var seaTac = new CookiesSold('SeaTac Airport', 3, 24, 1.2);
+
+console.log(pike);
+console.log(pike.randomCustPerHour());
+console.log(pike.simulateDay());
+console.log(CookiesSold.daySales);
+console.log(CookiesSold.locationTest);
+
+function render() {
+  var storeLocation = document.getElementById('storeLocation');
+  for (var i = 0; i <= CookiesSold.locationTest.length - 1; i++) {
+    var newLocation = document.createElement('h2');
+    newLocation.textContent = CookiesSold.locationTest[i];
+    storeLocation.appendChild(newLocation);
+
+    var unoredred = document.createElement('ul');
+
+    for (var j = 0; j <= CookiesSold.daySales.length - 1; j++) {
+      var newHour = document.createElement('li');
+      newHour.textContent = hourDay[j] + ': ' + CookiesSold.daySales[j] + ' cookies';
+      unoredred.appendChild(newHour);
+    }
+    storeLocation.appendChild(unoredred);
+  }
+}
+render();
+
+
+
+
+/*
 var pike = {
   location: '1st and Pike',
   minCust: 23,
@@ -80,6 +135,7 @@ var alki = {
   },
 };
 
+
 var stores = [pike, seaTac, seattleCenter, capitolHill, alki];
 
 var storeLocation = document.getElementById('storeLocation');
@@ -116,3 +172,4 @@ for (var i = 0; i <= stores.length - 1; i++) {
     total += stores[i].simulated[j];
   }
 }
+*/

@@ -1,6 +1,6 @@
 'use strict';
 
-var hourDay = ['6am','7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+var hourDay = ['6:00am','7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 
 function CookiesSold(location, minCust, maxCust, avgCookies) {
   this.name = location;
@@ -25,28 +25,36 @@ CookiesSold.prototype.simulateDay = function() {
   return daySales;
 };
 
+function prepare() {
+  hourDay.unshift('');
+  for (var i = 0; i <= CookiesSold.location.length - 1; i++) {
+    CookiesSold.projectedSales[i].unshift(CookiesSold.location[i]);
+  }
+}
+
+
+var totalHour = ['Totals'];
 
 function render() {
-  hourDay.unshift('');
+  prepare();
   var storeLocation = document.getElementById('storeLocation');
-  for (var i = 0; i <= CookiesSold.location.length - 1; i++) {
-    var unoredred = document.createElement('tr');
-    storeLocation.appendChild(unoredred);
+  for (var i = 0; i <= CookiesSold.location.length; i++) {
+    var table = document.createElement('tr');
+    storeLocation.appendChild(table);
 
-    CookiesSold.projectedSales[i].unshift(CookiesSold.location[i]);
     for (var j = 0; j <= hourDay.length - 1; j++) {
       if (i === 0) {
         var newHour = document.createElement('th');
         newHour.textContent = hourDay[j];
-        unoredred.appendChild(newHour);
+        table.appendChild(newHour);
       }
       else {
         newHour = document.createElement('td');
         newHour.textContent = CookiesSold.projectedSales[i-1][j];
-        unoredred.appendChild(newHour);
+        table.appendChild(newHour);
       }
     }
-    storeLocation.appendChild(unoredred);
+    storeLocation.appendChild(table);
   }
 }
 

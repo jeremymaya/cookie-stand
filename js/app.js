@@ -18,27 +18,44 @@ CookiesSold.prototype.randomCustPerHour = function() {
 };
 
 CookiesSold.prototype.simulateDay = function() {
+  var sum = 0;
   var daySales = [];
   for (var i = 0; i <= hourDay.length - 1; i++) {
-    daySales.push(Math.floor(this.randomCustPerHour() * this.avgCookies));
+    var x = Math.floor(this.randomCustPerHour() * this.avgCookies);
+    sum += x;
+    daySales.push(x);
   }
+  daySales.push(sum);
   return daySales;
 };
 
+function verticalSum() {
+  var empty = [];
+  for (var j = 0; j <= hourDay.length; j++) {
+    var sum = 0;
+    for (var i = 0; i <= CookiesSold.projectedSales.length - 1; i++) {
+      sum += CookiesSold.projectedSales[i][j];
+    }
+    empty.push(sum);
+  }
+  return empty;
+}
+
 function prepare() {
+  var x = verticalSum();
+  x.unshift('Total');
+  CookiesSold.projectedSales.push(x);
   hourDay.unshift('');
-  for (var i = 0; i <= CookiesSold.location.length - 1; i++) {
+  hourDay.push('Daily Location Total');
+  for (var i = 0; i <= CookiesSold.projectedSales.length - 2; i++) {
     CookiesSold.projectedSales[i].unshift(CookiesSold.location[i]);
   }
 }
 
-
-var totalHour = ['Totals'];
-
 function render() {
   prepare();
   var storeLocation = document.getElementById('storeLocation');
-  for (var i = 0; i <= CookiesSold.location.length; i++) {
+  for (var i = 0; i <= CookiesSold.location.length + 1; i++) {
     var table = document.createElement('tr');
     storeLocation.appendChild(table);
 

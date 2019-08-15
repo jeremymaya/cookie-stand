@@ -1,4 +1,10 @@
 # cookie-stand
+LAB 08
+Salmon Cookies
+Rewerote the code to showcase understanding of object constructor and modular appraoch. Added event listner feature for LAB 08.
+
+removeChild Source: https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
+
 LAB 07
 Salmon Cookies
 Chnaged object literals of app.js into constructors. Also randomly generated sales data is now dusplayed in a table format.

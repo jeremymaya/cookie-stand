@@ -6,10 +6,29 @@
         <link href = "../css/style.css" rel = "stylesheet" type = "text/css">
     </head>
     <body>
-        <table id = "storeLocation">
+        <form id = "new-store">
+            <fieldset>
+                <label for = "location">New Location:</label>
+                <input type = "text" name = "location" placeholder = "Enter the new location name" minLength = "3" required>
+            </fieldset>
+            <fieldset>
+                <label for = "minCust">Minimum Number of Customers:</label>
+                <input type = "text" name = "minCust" placeholder = "Enter the minimum number of customer for the location" minLength = "1" required>
+            </fieldset>
+            <fieldset>
+                <label for = "maxCust">Maximum Number of Customers:</label>
+                <input type="text" name="maxCust"  placeholder="Enter the maximum number of customer for the location" minLength="1" required>
+            </fieldset>
+            <fieldset>
+                <label for="avgPerCust">Average Number of Customers per Hour:</label>
+                <input type="text" name="avgPerCust"  placeholder="Enter average number of customer visiting the store per hour" minLength="1" required>
+            </fieldset>
+            <button id="submit_btn" type="submit">Add The Store</button>
+        </form>
+        <table id = "sales-data">
         </table>
+        <script src = "../js/app.js"></script>
     </body>
     <footer>
-        <script src = "../js/app.js"></script>
     </footer>
 </html>

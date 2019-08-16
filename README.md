@@ -1,4 +1,8 @@
 # cookie-stand
+LAB 09
+Salmon Cookies
+Added HTML content and CSS styling.
+
 LAB 08
 Salmon Cookies
 Rewerote the code to showcase understanding of object constructor and modular appraoch. Added event listner feature for LAB 08.

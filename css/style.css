@@ -1,18 +1,204 @@
+* {
+    /* outline: dotted 1px blue; */
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #B95C7F;
+}
+
+header {
+    background-color: #4A001B;
+}
+
+header > div {
+    width: 960px;
+    margin: auto;
+}
+
+header > div > img, h1 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header > div > img {
+    margin-right: 30px;
+}
+
+h1 {
+    font-size: 50px;
+    color: white;
+}
+
+nav {
+    display: inline-block;
+}
+
+nav > ul {
+    padding: 5px;
+}
+
+nav > ul > li {
+    display: inline-block;
+    font-size: 25px;
+    padding: 5px 15px;
+    margin: 0px 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    width: 960px;
+    margin: auto;
+}
+
+section {
+    margin: 30px 0px;
+    font-size: 0px;
+}
+
+h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    color:#DE94AF;
+}
+
+h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#cookies {
+    vertical-align: middle;
+}
+
+#cookies > img {
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+#cookies > img:nth-child(-n + 3) {
+    margin-right: 30px;
+    box-sizing: border-box;
+}
+
+#merchandise > img, article {
+    display: inline-block;
+}
+
+
+#merchandise > img {
+    margin-right: 30px;
+}
+
+#merchandise > article > h2, p {
+    display: inline-block;
+}
+
+#merchandise > article {
+    width: 600px;
+    vertical-align: top;
+}
+
+#merchandise > article > p {
+    font-size: 20px;
+}
+
+#about-us > img, p {
+    display: inline-block;
+}
+
+#about-us > img {
+    font-size: 20px;
+    margin-right: 30px;
+}
+
+#about-us > p {
+    font-size: 20px;
+    width: 330px;
+    vertical-align: top;
+}
+
+#logo2 {
+    padding: 40px;
+}
+
+#logo2 > img {
+    text-align: center;
+}
+
+footer {
+    background-color: #4A001B;
+}
+
+footer > div {
+    width: 960px;
+    margin: auto;
+    font-size: 0px;
+}
+
+footer > div > section {
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+footer > div > section:nth-child(-n + 2) {
+    margin-right: 30px;
+}
+
+footer > div > section > h3 {
+    font-size: 25px;
+}
+
+footer > div > section > ul > li {
+    margin: 5px 0px;
+    list-style: circle;
+    list-style-position: inside;
+}
+
+fieldset {
+    padding: 10px;
+    font-size: 15px;
+}
+
+label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 40%;
+    padding: 5px 5px;
+}
+
+button {
+    margin: 10px;
+}
+
 table {
     font-family: Arial, Helvetica, sans-serif;
     width: auto;
     border: 1px black solid;
-    margin: 2em;
+    background-color: white;
+    margin-bottom: 20px;
+    
 }
-
 th {
     font-weight: bold;
     align-self: auto;
     border: 1px black solid;
     padding: 0.5em;
+    background-color: #999;
 }
+
 td {
-text-align: center;
+    text-align: center;
     border: 1px black solid;
     padding: 0.5em;
+    background-color: #777;
 }

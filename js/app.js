@@ -146,4 +146,6 @@ renderSalesTableHead();
 renderSalesTableBody();
 rednerSalesTableFoot();
 form.addEventListener('submit', newStore);
-console.log(listOfStores);
+// console.log(listOfStores);
+
+

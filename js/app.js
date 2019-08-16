@@ -4,10 +4,8 @@ var form = document.getElementById('new-store');
 var table = document.getElementById('sales-data');
 var tbody = document.createElement('tbody');
 var tfoot = document.createElement('tfoot');
-var tr = document.createElement('tr');
 var hour = ['6:00am','7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 var listOfStores = [];
-var listOfNewStores = [];
 
 //Object Constructor for Stores
 function Store (location, minCust, maxCust, avgPerCust) {
@@ -64,8 +62,8 @@ function hourlyTotal () {
 
 //Event listener that passes user entered store information to Store object constructor
 //It prevents the page from regreshing
-//It renders a new row of sales data for the entered store
-//It should remove the old tfoot and render a new one with a updated total BUT it's not
+//It createa a new instance
+//It removes exisitng HTML content and renders existing sales data + sales data from the new instance
 function newStore(event) {
   event.preventDefault();
   var location = event.target.location.value;
@@ -73,14 +71,15 @@ function newStore(event) {
   var maxCust = parseInt(event.target.maxCust.value);
   var avgPerCust = parseInt(event.target.avgPerCust.value);
 
-  listOfNewStores.push(new Store (location, minCust, maxCust, avgPerCust));
+  new Store (location, minCust, maxCust, avgPerCust);
 
-  renderSalesTableBodyNew();
-  rednderSalesTableFootAgain();
+  tbody.innerHTML = '';
+  renderSalesTableBody();
+  tfoot.innerHTML = '';
+  rednerSalesTableFoot();
 
   form.reset();
   console.log(listOfStores);
-  console.log(listOfNewStores);
 }
 
 //Draws the table head
@@ -100,7 +99,6 @@ function renderSalesTableHead () {
   tr.appendChild(th);
   thead.appendChild(tr);
   table.appendChild(thead);
-  tbody;
 }
 
 //Draws the table body using the object data stored in listOfStores
@@ -120,32 +118,12 @@ function renderSalesTableBody () {
     tr.appendChild(td);
     tbody.appendChild(tr);
   }
-}
-
-//Draws a row using the new object data stored in listOfNewStores
-function renderSalesTableBodyNew () {
-  for (var i = listOfNewStores.length - 1; i < listOfNewStores.length; i++){
-    var tr =document.createElement('tr');
-    var td = document.createElement('td');
-    td.textContent = listOfNewStores[i].location;
-    tr.appendChild(td);
-    for (var j = 0; j < hour.length; j++) {
-      td = document.createElement('td');
-      td.textContent = listOfNewStores[i].salesGenerated[j];
-      tr.appendChild(td);
-    }
-    td = document.createElement('td');
-    td.textContent = listOfNewStores[i].dailyTotal;
-    tr.appendChild(td);
-    tbody.appendChild(tr);
-  }
+  table.appendChild(tbody);
 }
 
 //Draws the table foot using the array of hourly total calcualted from hourlyTotal function
 function rednerSalesTableFoot () {
-  table.appendChild(tbody);
-  tfoot;
-  tr;
+  var tr = document.createElement('tr');
   var td = document.createElement('td');
   td.textContent = 'Total';
   tr.appendChild(td);
@@ -158,12 +136,6 @@ function rednerSalesTableFoot () {
   table.appendChild(tfoot);
 }
 
-//Removes the existing table foot and draws a new table foot to disply new hourlyTotal
-function rednderSalesTableFootAgain () {
-  table.removeChild(tfoot); //Source: https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
-  rednerSalesTableFoot();
-}
-
 new Store ('1st and Pike', 23, 65, 6.3);
 new Store ('SeaTac Airport', 3, 24, 1.2);
 new Store ('Seattle Center', 11, 38, 3.7);
@@ -172,6 +144,6 @@ new Store ('Alki', 2, 16, 4.6);
 
 renderSalesTableHead();
 renderSalesTableBody();
-form.addEventListener('submit', newStore);
 rednerSalesTableFoot();
+form.addEventListener('submit', newStore);
 console.log(listOfStores);

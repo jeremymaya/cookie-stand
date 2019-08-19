@@ -1,15 +1,12 @@
-* {
-    /* outline: dotted 1px blue; */
-}
 body {
-    font-family: Arial, Helvetica, sans-serif;
     color: #484E5D;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
     background-color: #ffffff;
-    width: 960px;
     margin: auto;
+    width: 960px;
 }
 
 header > div > img, h1 {
@@ -22,8 +19,8 @@ header > div > img {
 }
 
 h1 {
-    font-size: 50px;
     color: #FFb6b6;
+    font-size: 50px;
 }
 
 header > div:nth-child(2) {
@@ -37,17 +34,17 @@ nav {
 }
 
 nav > ul {
-width: 960px;
-margin: auto;
     display:inline-block;
     list-style: none;
+    margin: auto;
+    width: 960px;
 }
 
 nav > ul > li {
     display: inline-block;
     font-size: 25px;
-    padding: 5px 15px;
     margin: 5px 30px;
+    padding: 5px 15px;
 }
 
 a {
@@ -56,37 +53,37 @@ a {
 
 /* http://dorward.me.uk/www/underline/ */
 a:link {
-    text-decoration:  none;
     color: #f3f1e7;
+    text-decoration:  none;
 } 
 
 a:visited {
-    text-decoration: none;
     color: #f3f1e7;
+    text-decoration: none;
 } 
 
 main {
-    width: 960px;
     margin: auto;
+    width: 960px;
 }
 
 section {
-    margin-top: 30px;
-    font-size: 0px;
     border-bottom: #484E5D 10px soild;
+    font-size: 0px;
+    margin-top: 30px;
 }
 
 h2 {
-    font-size: 30px;
-    margin-top: 15px;
-    margin-bottom: 15px;
     color: #484E5D;
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 h3 {
+    color: #FFb6b6;
     font-size: 28px;
     margin-bottom: 10px;
-    color: #FFb6b6;
 }
 
 #cookies {
@@ -99,8 +96,8 @@ h3 {
 }
 
 #cookies > img:nth-child(-n + 3) {
-    margin-right: 30px;
     box-sizing: border-box;
+    margin-right: 30px;
 }
 
 #merchandise > img, article {
@@ -117,8 +114,8 @@ h3 {
 }
 
 #merchandise > article {
-    width: 600px;
     vertical-align: top;
+    width: 600px;
 }
 
 #merchandise > article > p {
@@ -136,8 +133,8 @@ h3 {
 
 #about-us > p {
     font-size: 20px;
-    width: 330px;
     vertical-align: top;
+    width: 330px;
 }
 
 #logo2 {
@@ -147,8 +144,8 @@ h3 {
 
 footer {
     background-color: #484E5D;
-    width: 960px;
     margin: 30px auto 0px auto;
+    width: 960px;
 }
 
 footer > div {
@@ -156,11 +153,11 @@ footer > div {
 }
 
 footer > div > section {
-    width: 300px;
-    display: inline-block;
-    vertical-align: top;
     box-sizing: border-box;
+    display: inline-block;
     font-size: 30fpx;
+    vertical-align: top;
+    width: 300px;
 }
 
 footer > div > section:nth-child(-n + 2) {
@@ -168,23 +165,23 @@ footer > div > section:nth-child(-n + 2) {
 }
 
 footer > div > section > h3 {
+    color: #f3f1e7;
     font-size: 20px;
     margin-left: 30px;
-    color: #f3f1e7;
 }
 
 footer > div > section > ul > li {
-    margin: 5px 0px;
+    color: #f3f1e7;
+    font-size: 15px;
     list-style: circle;
     list-style-position: inside;
-    font-size: 15px;
-    color: #f3f1e7;
+    margin: 5px 0px;
     margin-left: 35px;
 }
 
 fieldset:first-child {
-    margin-top: 30px;
     font-size: 30px;
+    margin-top: 30px;
 }
 
 fieldset {
@@ -198,17 +195,17 @@ label {
 }
 
 input {
-    width: 40%;
-    padding: 5px 5px;
     font-size: 15px;
+    padding: 5px 5px;
+    width: 40%;
 }
 
 button {
-    margin-top: 15px;
-    font-size: 15px;
-    padding: 10px 30px;
     background: #ffb6b6;
     color: 484E5D;
+    font-size: 15px;
+    margin-top: 15px;
+    padding: 10px 30px;
 }
 
 #button {
@@ -217,24 +214,24 @@ button {
 }
 
 table {   
-    font-family: Arial, Helvetica, sans-serif;
-    width: auto;
-    border: 1px black solid;
     background-color: white;
+    border: 1px black solid;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 30px auto 30px auto;    
+    width: auto;
 }
 
 th {
-    font-weight: bold;
     align-self: auto;
-    border: 1px black solid;
-    padding: 0.5em;
     background-color: #f3f1e7;
+    border: 1px black solid;
+    font-weight: bold;
+    padding: 0.5em;
 }
 
 td {
-    text-align: center;
+    background-color: white;
     border: 1px black solid;
     padding: 0.5em;
-    background-color: white;
+    text-align: center;
 }

@@ -1,4 +1,8 @@
 # cookie-stand
+LAB 10
+Salmon Cookies
+Changed color pallete for simpler apperance. Added finihshing touch.
+
 LAB 09
 Salmon Cookies
 Added HTML content and CSS styling.
